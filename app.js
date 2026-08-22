@@ -3,6 +3,7 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlider();
     initTradeCanvas();
     initStatsCounter();
     initTabbedPillars();
@@ -347,4 +348,85 @@ function initDropdownNav() {
             });
         }
     });
+}
+
+/* --------------------------------------------------------------------------
+   10. Fullscreen Hero Slider — 4-Slide Crossfade with Autoplay
+   -------------------------------------------------------------------------- */
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const prevBtn = document.querySelector('.slider-arrow.prev');
+    const nextBtn = document.querySelector('.slider-arrow.next');
+    const counterEl = document.querySelector('.current-slide');
+    if (!slides.length) return;
+
+    let current = 0;
+    const total = slides.length;
+    let autoplayInterval = null;
+
+    function goToSlide(index) {
+        // Deactivate current slide
+        slides[current].classList.remove('active');
+
+        // Update index
+        current = (index + total) % total;
+
+        // Activate new slide
+        const incoming = slides[current];
+        incoming.classList.add('active');
+        resetAnimations(incoming);
+
+        // Update dots
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+
+        // Update counter
+        if (counterEl) counterEl.textContent = String(current + 1).padStart(2, '0');
+    }
+
+    function resetAnimations(slide) {
+        const animatedEls = slide.querySelectorAll('.slide-mono-tag, .title-word, .slide-description, .slide-stats, .slide-actions');
+        animatedEls.forEach(el => {
+            el.style.animation = 'none';
+            void el.offsetHeight; // Force reflow
+            el.style.animation = '';
+        });
+    }
+
+    function nextSlide() { goToSlide(current + 1); }
+    function prevSlide() { goToSlide(current - 1); }
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextSlide, 6000);
+    }
+
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+
+    // Dot navigation
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(i);
+            startAutoplay();
+        });
+    });
+
+    // Arrow navigation
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); nextSlide(); startAutoplay(); });
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); prevSlide(); startAutoplay(); });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { nextSlide(); startAutoplay(); }
+        if (e.key === 'ArrowLeft') { prevSlide(); startAutoplay(); }
+    });
+
+    // Initial start
+    startAutoplay();
 }
