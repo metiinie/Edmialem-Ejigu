@@ -23,7 +23,7 @@ const translations = {
       titlePrefix: "Connecting",
       titleHighlight: "Ethiopia",
       titleSuffix: "to Global Markets",
-      subtitle: "Edmealem Ejigu Business Group is a diversified Ethiopian trading and investment company — bringing industrial and commercial goods in, sending Ethiopia's finest agricultural commodities out, and building domestic ventures.",
+      subtitle: "Diversified Ethiopian B2B corporate group — importing heavy industrial machinery, exporting specification-grade agricultural commodities, and investing in logistics & hospitality.",
       btnBusinesses: "Explore Our Businesses",
       btnPartner: "Partner With Us",
       inboundTitle: "INBOUND INDUSTRIAL TRADE",
@@ -36,13 +36,13 @@ const translations = {
     about: {
       monoTag: "CORPORATE NARRATIVE & LEADERSHIP",
       title: "Building Ethiopia's Trade Infrastructure",
-      p1: "Building on trading experience dating back to 1995, Edmealem Ejigu Business Group was formally established as a business group in 2004. Headquartered in Addis Ababa, the group operates across heavy machinery import, agricultural commodity export, government procurement, and hospitality investment.",
-      p2: "Operating through registered corporate entities including Edmealem Ejigu Tessema and Edmealem Ejigu Import Export, the group maintains end-to-end supply chain integration connecting Ethiopian trade corridors with global industrial manufacturers and international agricultural buyers.",
+      p1: "Established in 1995 and formally incorporated as a business group in 2004, Edmealem Ejigu Business Group is a premier B2B trading conglomerate headquartered in Addis Ababa.",
+      p2: "The group operates integrated trade corridors connecting global equipment manufacturers with Ethiopian industrial demand while exporting premium Ethiopian commodities.",
       ceoName: "Edmealem Ejigu",
       ceoRole: "Founder & Chief Executive Officer",
       ceoEducation: "B.Pharm (AAU) · MBA (IGNOU)",
-      ceoBio: "Extensive experience in supply chain logistics, pharmaceutical sector operations, and institutional program management, including US Government-funded logistics programs in Ethiopia.",
-      verificationNote: "Official corporate profile. Detailed biography and executive history confirmed."
+      ceoBio: "25+ years leading cross-border supply chain logistics, pharmaceutical trade, and institutional procurement programs across East Africa.",
+      verificationNote: "Official corporate profile. Executive biography confirmed."
     },
     businesses: {
       monoTag: "FOUR CORE PILLARS",
@@ -61,13 +61,13 @@ const translations = {
       title: "End-to-End Trade Corridors",
       subtitle: "Managing two-way freight logistics between international ports and inland Ethiopian commercial hubs.",
       step1: "1. Overseas Factory",
-      step1Desc: "Sourcing & pre-shipment inspection at port of origin (Asia / Europe).",
+      step1Desc: "Sourcing & pre-shipment inspection at port of origin.",
       step2: "2. Djibouti Corridor",
-      step2Desc: "Customs transit & port handling via Djibouti & Asha Dewelle corridors.",
+      step2Desc: "Customs transit & port handling via Djibouti corridor.",
       step3: "3. Inland Transit",
-      step3Desc: "Centralized fleet dispatch & multi-modal transport under customs bond.",
+      step3Desc: "Bonded fleet transport to Modjo & Addis Ababa.",
       step4: "4. Addis Ababa Hub",
-      step4Desc: "Final clearance, warehousing, and distribution to domestic clients."
+      step4Desc: "Final clearance, warehousing, and client distribution."
     },
     compliance: {
       monoTag: "QUALITY ASSURANCE & STANDARDS",
