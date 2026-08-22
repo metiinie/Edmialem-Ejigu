@@ -323,3 +323,28 @@ function initHeaderScroll() {
         });
     }
 }
+
+/* --------------------------------------------------------------------------
+   9. Dropdown Hover & Touch Navigation Handler
+   -------------------------------------------------------------------------- */
+function initDropdownNav() {
+    const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+    dropdownItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.classList.add('open');
+        });
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('open');
+        });
+        const link = item.querySelector('.nav-link');
+        if (link) {
+            link.addEventListener('click', (e) => {
+                // If on mobile or touch device, toggle menu
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    item.classList.toggle('open');
+                }
+            });
+        }
+    });
+}
