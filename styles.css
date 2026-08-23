@@ -4274,3 +4274,44 @@ h6 {
   border-color: #b91c1c !important;
   box-shadow: 0 6px 20px rgba(217, 45, 32, 0.35) !important;
 }
+
+/* ==========================================================================
+   HERO SLIDER TEXT COLOR OVERRIDE (White-Blue Font & Red Accent Preservation)
+   ========================================================================== */
+.hero-slide-content {
+  color: #F0F9FF !important;
+}
+
+.slide-mono-tag {
+  color: #38BDF8 !important;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.slide-headline {
+  color: #F0F9FF !important;
+}
+
+.slide-headline .title-word {
+  color: #F0F9FF !important;
+}
+
+.slide-headline .title-word.accent,
+.slide-headline span.accent {
+  color: #D92D20 !important;
+  /* Preserved Red Accent */
+}
+
+.slide-description {
+  color: #E0F2FE !important;
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+.slide-stat strong {
+  color: #FFFFFF !important;
+}
+
+.slide-stat span {
+  color: #BAE6FD !important;
+}
