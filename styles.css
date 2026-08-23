@@ -4315,3 +4315,54 @@ h6 {
 .slide-stat span {
   color: #BAE6FD !important;
 }
+
+/* ==========================================================================
+   GRADIENT FOOTER SECTION (Matching Reference Image)
+   ========================================================================== */
+footer,
+.site-footer {
+  background: linear-gradient(90deg, #0A5991 0%, #5E35B1 48%, #D92D20 100%) !important;
+  color: #FFFFFF !important;
+  padding-top: 64px;
+  padding-bottom: 32px;
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+footer h5,
+.footer-col h5,
+.footer-brand .logo-name,
+.footer-brand .logo-sub {
+  color: #FFFFFF !important;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+footer p,
+.footer-brand p,
+.footer-col p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 0.92rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding-top: 24px;
+  margin-top: 48px;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.85rem;
+}
