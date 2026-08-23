@@ -88,35 +88,37 @@ function initTradeCanvas() {
    2. Scroll-Triggered Animated Statistics Counter
    -------------------------------------------------------------------------- */
 function initStatsCounter() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-    let animated = false;
+    const statContainers = document.querySelectorAll('.stats-bar-wrapper, .enterprise-stats-bar');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !animated) {
-                animated = true;
-                statNumbers.forEach(num => {
-                    const target = parseInt(num.getAttribute('data-target'), 10);
-                    const suffix = num.getAttribute('data-suffix') || '';
-                    let count = 0;
-                    const duration = 1200;
-                    const stepTime = Math.max(Math.floor(duration / target), 12);
+    statContainers.forEach(container => {
+        let animated = false;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    const statNumbers = container.querySelectorAll('.stat-number');
+                    statNumbers.forEach(num => {
+                        const target = parseInt(num.getAttribute('data-target'), 10);
+                        const suffix = num.getAttribute('data-suffix') || '';
+                        let count = 0;
+                        const duration = 1200;
+                        const stepTime = Math.max(Math.floor(duration / Math.max(target, 1)), 12);
 
-                    const timer = setInterval(() => {
-                        count += Math.ceil(target / 40);
-                        if (count >= target) {
-                            count = target;
-                            clearInterval(timer);
-                        }
-                        num.textContent = count + suffix;
-                    }, stepTime);
-                });
-            }
-        });
-    }, { threshold: 0.3 });
+                        const timer = setInterval(() => {
+                            count += Math.ceil(target / 30);
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(timer);
+                            }
+                            num.textContent = count + suffix;
+                        }, stepTime);
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
 
-    const statsSection = document.querySelector('.stats-bar-wrapper');
-    if (statsSection) observer.observe(statsSection);
+        observer.observe(container);
+    });
 }
 
 /* --------------------------------------------------------------------------
