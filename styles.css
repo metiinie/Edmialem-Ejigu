@@ -3,46 +3,54 @@
    ========================================================================== */
 
 :root {
-  /* Brand Color Tokens */
-  --navy: #0B1628;
-  --navy-mid: #132035;
-  --navy-soft: #1A2C45;
-  --navy-glass: rgba(19, 32, 53, 0.85);
+  /* Brand Color System Tokens */
+  --bg-main: #FFFFFF;
+  --bg-section: #F5F5F5;
+  --brand-blue: #0A5991;
+  --brand-red: #D92D20;
+  /* Vibrant Logo Red Accent */
+  --brand-orange: #F36C21;
+  --text-body: #000000;
 
-  --amber: #B8830A;
-  --amber-lt: #D4A020;
-  --amber-dim: rgba(184, 131, 10, 0.14);
-  --amber-glow: rgba(212, 160, 32, 0.3);
+  /* Legacy Mappings for Full App Compatibility */
+  --navy: #0A5991;
+  --navy-mid: #07436e;
+  --navy-soft: #0A5991;
+  --navy-glass: rgba(10, 89, 145, 0.92);
 
-  --stone: #F5F0E8;
-  --stone-mid: #E8E1D4;
-  --stone-muted: #A39D93;
+  --amber: #D92D20;
+  --amber-lt: #D92D20;
+  --amber-dim: rgba(217, 45, 32, 0.12);
+  --amber-glow: rgba(217, 45, 32, 0.25);
 
-  --slate-blue: #2B5BA8;
-  --slate-blue-light: #4A7FD4;
-  --slate-blue-dim: rgba(43, 91, 168, 0.15);
+  --stone: #000000;
+  --stone-mid: #111111;
+  --stone-muted: #333333;
 
-  --green-trade: #1E5C3A;
-  --green-trade-light: #2E8B57;
-  --green-trade-dim: rgba(30, 92, 58, 0.18);
+  --slate-blue: #0A5991;
+  --slate-blue-light: #1670b3;
+  --slate-blue-dim: rgba(10, 89, 145, 0.15);
 
-  --border: rgba(245, 240, 232, 0.12);
-  --border-amber: rgba(184, 131, 10, 0.28);
-  --border-blue: rgba(43, 91, 168, 0.3);
-  --border-green: rgba(30, 92, 58, 0.3);
+  --green-trade: #0A5991;
+  --green-trade-light: #1670b3;
+  --green-trade-dim: rgba(10, 89, 145, 0.15);
 
-  /* Typography */
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --border: #e2e8f0;
+  --border-amber: rgba(217, 45, 32, 0.4);
+  --border-blue: rgba(10, 89, 145, 0.4);
+  --border-green: rgba(10, 89, 145, 0.4);
+
+  /* Modern Typography (Plus Jakarta Sans & Outfit) */
+  --font-display: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', Consolas, monospace;
 
   /* Transitions & Radii */
   --radius-none: 0px;
-  /* Deliberately square for institutional seriousness */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-elevated: 0 16px 36px rgba(0, 0, 0, 0.35);
-  --shadow-glow: 0 0 24px rgba(184, 131, 10, 0.15);
+  --shadow-elevated: 0 16px 36px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 24px rgba(217, 45, 32, 0.2);
 }
 
 /* RTL Support for Arabic */
@@ -2898,4 +2906,1371 @@ select.form-control {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
+}
+
+/* ==========================================================================
+   3 LOGISTICS VISUAL INFRASTRUCTURE CARDS (.logistics-cards-grid)
+   ========================================================================== */
+.logistics-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.logistics-visual-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.logistics-visual-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+.logistics-card-img {
+  position: relative;
+  height: 165px;
+  overflow: hidden;
+  background: #0b1628;
+}
+
+.logistics-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.logistics-visual-card:hover .logistics-card-img img {
+  transform: scale(1.08);
+}
+
+.logistics-card-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(11, 22, 40, 0.88);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.04em;
+}
+
+.logistics-card-content {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.logistics-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.logistics-card-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.logistics-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.logistics-tag {
+  color: #0f766e;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.logistics-status {
+  color: #047857;
+  font-weight: 800;
+  background: #ecfdf5;
+  padding: 3px 8px;
+  border-radius: 8px;
+  border: 1px solid #a7f3d0;
+}
+
+@media (max-width: 992px) {
+  .logistics-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   3-CARD CROSS-BORDER HAULAGE & FLEET SHOWCASE (.haulage-cards-grid)
+   ========================================================================== */
+.haulage-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.haulage-visual-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.haulage-visual-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  border-color: #cbd5e1;
+}
+
+.haulage-card-img {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  background: #0b1628;
+}
+
+.haulage-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.haulage-visual-card:hover .haulage-card-img img {
+  transform: scale(1.08);
+}
+
+.haulage-card-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(11, 22, 40, 0.88);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.04em;
+}
+
+.haulage-card-body {
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.haulage-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.haulage-card-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.haulage-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.haulage-specs-list li {
+  font-size: 0.84rem;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.haulage-specs-list li strong {
+  color: #0f172a;
+}
+
+.haulage-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.haulage-tag {
+  color: #0284c7;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.haulage-status {
+  color: #047857;
+  font-weight: 800;
+  background: #ecfdf5;
+  padding: 3px 8px;
+  border-radius: 8px;
+  border: 1px solid #a7f3d0;
+}
+
+@media (max-width: 992px) {
+  .haulage-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .haulage-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   4-STAGE VISUAL LOGISTICS PIPELINE (.freight-pipeline-wrapper)
+   ========================================================================== */
+.freight-pipeline-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 40px 32px 36px;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.05);
+}
+
+.pipeline-connector-track {
+  position: relative;
+  margin: 32px 0 40px;
+}
+
+.pipeline-track-line {
+  position: absolute;
+  top: 24px;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.pipeline-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+  border-radius: 4px;
+}
+
+.pipeline-nodes-row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  padding: 0 4%;
+}
+
+.pipeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.node-icon {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border: 2px solid #059669;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+  transition: all 0.3s ease;
+}
+
+.pipeline-node.active .node-icon {
+  background: #ecfdf5;
+  transform: scale(1.1);
+}
+
+.node-step {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #047857;
+  letter-spacing: 0.06em;
+}
+
+.pipeline-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.pipeline-stage-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pipeline-stage-card:hover {
+  background: #ffffff;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+.pipeline-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.stage-num-badge {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #0b1628;
+  opacity: 0.85;
+}
+
+.stage-duration-tag {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #047857;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.pipeline-card-main {
+  flex-grow: 1;
+}
+
+.stage-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.stage-location {
+  display: block;
+  font-size: 0.78rem;
+  color: #0284c7;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.stage-desc {
+  font-size: 0.84rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.stage-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stage-checklist li {
+  font-size: 0.78rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.pipeline-card-footer {
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.pipeline-status-pill {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #047857;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid #a7f3d0;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1024px) {
+  .pipeline-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pipeline-track-line {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .pipeline-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   QUALITY COMPLIANCE LIGHT THEME REDESIGN (#compliance)
+   ========================================================================== */
+#compliance.section-light {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+#compliance .compliance-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+#compliance .compliance-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+.compliance-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+#compliance .compliance-icon {
+  width: 44px;
+  height: 44px;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.compliance-status-tag {
+  background: #f1f5f9;
+  color: #047857;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  letter-spacing: 0.04em;
+}
+
+#compliance .compliance-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+#compliance .compliance-card p {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   CAREERS LIGHT THEME REDESIGN (#careers)
+   ========================================================================== */
+#careers.section-light {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+#careers .job-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s ease;
+}
+
+#careers .job-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.job-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.job-dept-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #0284c7;
+  letter-spacing: 0.05em;
+}
+
+#careers .job-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0;
+}
+
+#careers .job-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.job-pill {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.btn-navy-solid {
+  background-color: #0b1628;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-navy-solid:hover {
+  background-color: #059669;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.3);
+}
+
+#careers .culture-card {
+  background: #0b1628;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 32px;
+  color: #ffffff;
+  box-shadow: 0 12px 32px rgba(11, 22, 40, 0.15);
+}
+
+.culture-badge {
+  display: inline-block;
+  background: rgba(5, 150, 105, 0.2);
+  color: #34d399;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+}
+
+#careers .culture-card h4 {
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+#careers .culture-card p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.culture-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #6ee7b7;
+}
+
+/* ==========================================================================
+   FIELD OPERATIONS SHOWCASE LIGHT THEME REDESIGN (#showcase)
+   ========================================================================== */
+#showcase.section-light {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+#showcase .media-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#showcase .media-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+#showcase .media-card-badge {
+  background-color: rgba(11, 22, 40, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+#showcase .media-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+#showcase .media-card-desc {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   GLOBAL OPERATIONS & EXPERIENCE COUNTER EXACT REFERENCE UX (#experience)
+   ========================================================================== */
+#experience.section-light {
+  background-color: #ffffff;
+  color: #0f172a;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.experience-reference-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.exp-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-column.left-stats,
+.exp-column.right-stats {
+  gap: 44px;
+}
+
+.exp-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.exp-icon-box {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exp-icon-box svg {
+  width: 44px;
+  height: 44px;
+  stroke: #dc2626;
+}
+
+.exp-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-num-wrap {
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+}
+
+.exp-val {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #dc2626;
+  letter-spacing: -0.02em;
+}
+
+.exp-plus {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #dc2626;
+  margin-left: 1px;
+}
+
+.exp-text-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* Center Image Composite */
+.exp-column.center-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exp-main-visual-img {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .experience-reference-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .exp-column.center-graphic {
+    order: -1;
+  }
+
+  .exp-column.left-stats,
+  .exp-column.right-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .exp-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .exp-column.left-stats,
+  .exp-column.right-stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .exp-item {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.bg-vmv-section {
+  background-color: #FFFFFF;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.about-vmv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
+.vmv-card {
+  background-color: #F5F5F5;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 48px 32px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.vmv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.brand-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+.vmv-icon-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.vmv-img-badge {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.exp-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.exp-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vmv-title {
+  font-family: var(--font-body);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0A5991;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.vmv-text {
+  font-size: 0.95rem;
+  color: #000000;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .about-vmv-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ==========================================================================
+   Build Your Career With Us Section (Exact Reference UX Redesign - Image 1)
+   ========================================================================== */
+.bg-careers-redesign {
+  background-color: #FFFFFF;
+}
+
+.section-title-redesign {
+  font-family: var(--font-body);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0A5991;
+  letter-spacing: -0.01em;
+}
+
+.careers-redesign-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.careers-visual-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.career-illustr-card {
+  background: #F5F5F5;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.career-exact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.careers-form-column {
+  background: transparent;
+  padding: 10px 0;
+}
+
+.career-field-row {
+  margin-bottom: 20px;
+}
+
+.career-field-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0A5991;
+  margin-bottom: 8px;
+}
+
+.career-input-control {
+  width: 100%;
+  padding: 12px 18px;
+  background-color: #F5F5F5;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #000000;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.career-input-control:focus {
+  border-color: #0A5991;
+  box-shadow: 0 0 0 3px rgba(10, 89, 145, 0.1);
+}
+
+.career-files-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.custom-file-wrapper {
+  position: relative;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.btn-choose-file {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #F5F5F5;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-choose-file:hover {
+  background-color: #e2e8f0;
+  border-color: #0A5991;
+}
+
+.btn-career-submit {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #0A5991;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(10, 89, 145, 0.25);
+}
+
+.btn-career-submit:hover {
+  background-color: #F36C21;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Contact Us Section (Exact Reference UX Redesign - Image 2)
+   ========================================================================== */
+.bg-contact-redesign {
+  background-color: #F5F5F5;
+}
+
+.contact-redesign-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Column 1: Orange Card Stack */
+.contact-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.contact-orange-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.orange-icon-box {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #F36C21;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  background-color: #FFFFFF;
+}
+
+.orange-icon-box svg {
+  fill: #F36C21;
+}
+
+.contact-card-text {
+  font-size: 0.95rem;
+  color: #000000;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.contact-card-text a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-card-text a:hover {
+  color: #F36C21;
+}
+
+/* Column 2: Form */
+.contact-form-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-pill-item {
+  margin-bottom: 20px;
+}
+
+.input-pill-control {
+  width: 100%;
+  padding: 14px 24px;
+  background-color: #FFFFFF;
+  border: 1px solid #cbd5e1;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  color: #000000;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-pill-control:focus,
+.textarea-pill-control:focus {
+  border-color: #F36C21;
+  box-shadow: 0 0 0 3px rgba(243, 108, 33, 0.15);
+}
+
+.textarea-pill-control {
+  width: 100%;
+  padding: 18px 24px;
+  background-color: #FFFFFF;
+  border: 1px solid #cbd5e1;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  color: #000000;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-send-pill {
+  padding: 12px 36px;
+  background-color: #F36C21;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(243, 108, 33, 0.25);
+}
+
+.btn-send-pill:hover {
+  background-color: #d85711;
+  transform: translateY(-2px);
+}
+
+/* Column 3: Map */
+.contact-map-column {
+  height: 100%;
+  min-height: 420px;
+}
+
+.map-card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.btn-open-maps {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  background: #ffffff;
+  color: #2563eb;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid #cbd5e1;
+  transition: background-color 0.2s ease;
+}
+
+.btn-open-maps:hover {
+  background-color: #f8fafc;
+}
+
+@media (max-width: 1024px) {
+  .careers-redesign-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-redesign-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-map-column {
+    min-height: 320px;
+  }
+}
+
+/* ==========================================================================
+   RED BRAND ACCENT & ULTRA-MODERN TYPOGRAPHY OVERHAUL (Reference UX)
+   ========================================================================== */
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Red Accent Main Section Titles (Matching reference image: "ABOUT US" in bold uppercase red) */
+.section-title,
+.about-intro-title,
+.section-heading,
+.careers-main-title,
+.contact-main-title {
+  color: #D92D20 !important;
+  font-family: var(--font-display) !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  margin-bottom: 12px;
+}
+
+/* Subheadings in Bold Navy Blue (#0A5991) matching reference image: "Our Speciality" */
+.section-subtitle,
+.about-lead-text,
+.careers-sub-title,
+.contact-sub-title {
+  color: #0A5991 !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  line-height: 1.5;
+}
+
+/* Section Header Accent Underline Bar */
+.accent-bar,
+.title-accent-line {
+  display: inline-block;
+  width: 60px;
+  height: 4px;
+  background-color: #0A5991;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+/* Red Outline CTA Buttons matching reference image: "READ MORE" */
+.btn-outline-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #D92D20;
+  background-color: transparent;
+  color: #D92D20;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 24px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-outline-red:hover {
+  background-color: #D92D20;
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(217, 45, 32, 0.3);
+}
+
+/* Solid Red Primary Buttons */
+.btn-primary,
+.btn-send-pill {
+  background-color: #D92D20 !important;
+  border-color: #D92D20 !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.btn-primary:hover,
+.btn-send-pill:hover {
+  background-color: #b91c1c !important;
+  border-color: #b91c1c !important;
+  box-shadow: 0 6px 20px rgba(217, 45, 32, 0.35) !important;
 }
