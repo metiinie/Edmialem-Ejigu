@@ -113,10 +113,14 @@
           <div class="nav-item dropdown">
             <a href="#businesses" class="nav-link" data-i18n="nav.businesses">BUSINESSES ▾</a>
             <div class="dropdown-menu">
-              <a href="#businesses" class="dropdown-link">INDUSTRIAL IMPORT (HS 8429)</a>
-              <a href="#businesses" class="dropdown-link">AGRICULTURAL EXPORT (SESAME & COFFEE)</a>
-              <a href="#businesses" class="dropdown-link">GOVERNMENT PROCUREMENT</a>
-              <a href="#businesses" class="dropdown-link">HOSPITALITY INVESTMENT</a>
+              <a href="#businesses" class="dropdown-link" data-tab-target="tab-import">1. INDUSTRIAL IMPORT (HS
+                8429)</a>
+              <a href="#businesses" class="dropdown-link" data-tab-target="tab-export">2. AGRICULTURAL EXPORT (SESAME &
+                COFFEE)</a>
+              <a href="#businesses" class="dropdown-link" data-tab-target="tab-procurement">3. GOVERNMENT
+                PROCUREMENT</a>
+              <a href="#businesses" class="dropdown-link" data-tab-target="tab-investment">4. HOSPITALITY &
+                INVESTMENT</a>
             </div>
           </div>
 
@@ -404,245 +408,264 @@
 
       <!-- Tab 1: Import -->
       <div id="tab-import" class="tab-content-panel active">
-        <div class="pillar-grid">
-          <div class="pillar-details">
-            <div style="margin-bottom: 20px; overflow: hidden; border: 1px solid var(--border-amber); height: 180px;">
-              <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80"
-                alt="Heavy Machinery & Industrial Equipment" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="zigzag-container">
+          <!-- Row 1: Photo Left, Content Right -->
+          <div class="zigzag-row">
+            <div class="zigzag-media">
+              <div class="zigzag-img-frame">
+                <img src="assets/images/heavy_crane_trucks.png"
+                  alt="Heavy Machinery & Industrial Equipment - XCMG Crane & Trucks">
+                <span class="zigzag-badge">HS 8429 IMPORT</span>
+              </div>
             </div>
-            <h3>Heavy Machinery & Industrial Equipment</h3>
-            <p style="color: var(--stone-mid); margin-bottom: 24px;">
-              Direct importer of heavy earthmoving machinery, commercial transport fleets, and industrial replacement
-              components servicing construction and road infrastructure across Ethiopia.
-            </p>
-            <div class="product-list-box">
-              <div class="product-item">
-                <span class="product-name">Bulldozers, Angledozers, Graders & Excavators</span>
-                <span class="hs-code">HS 8429</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">Commercial Freight Trucks & Transport Vehicles</span>
-                <span class="hs-code">HS 8704</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">Heavy Duty Bus & Lorry Radial Tires</span>
-                <span class="hs-code">HS 4011</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">Automotive Transmission & Clutch Assemblies</span>
-                <span class="hs-code">HS 8708</span>
+            <div class="zigzag-info">
+              <span class="mono-tag">INDUSTRIAL IMPORT DIVISION</span>
+              <h3 class="zigzag-title">Heavy Machinery &amp; Industrial Equipment</h3>
+              <p class="zigzag-desc">
+                Direct importer of heavy earthmoving machinery, commercial transport fleets, and industrial replacement
+                components servicing construction and road infrastructure across Ethiopia.
+              </p>
+              <div class="product-list-box">
+                <div class="product-item">
+                  <span class="product-name">Bulldozers, Angledozers, Graders &amp; Excavators</span>
+                  <span class="hs-code">HS 8429</span>
+                </div>
+                <div class="product-item">
+                  <span class="product-name">Commercial Freight Trucks &amp; Transport Vehicles</span>
+                  <span class="hs-code">HS 8704</span>
+                </div>
+                <div class="product-item">
+                  <span class="product-name">Heavy Duty Bus &amp; Lorry Radial Tires</span>
+                  <span class="hs-code">HS 4011</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="chart-card">
-            <h4 class="chart-card-title">Sourcing Origins (Trade Records)</h4>
-            <div class="bar-chart">
-              <div class="chart-row">
-                <div class="chart-row-label">
-                  <span>Asia Corridor (China, India)</span>
-                  <span>68%</span>
+          <!-- Row 2: Content Left, Photo Right (Reverse) -->
+          <div class="zigzag-row reverse">
+            <div class="zigzag-info">
+              <span class="mono-tag">GLOBAL TRADE RECORDS</span>
+              <h3 class="zigzag-title">Sourcing Origins &amp; Partner Network</h3>
+              <div class="bar-chart">
+                <div class="chart-row">
+                  <div class="chart-row-label">
+                    <span>Asia Corridor (China, India)</span>
+                    <span>68%</span>
+                  </div>
+                  <div class="chart-bar-bg">
+                    <div class="chart-bar-fill" data-width="68"></div>
+                  </div>
                 </div>
-                <div class="chart-bar-bg">
-                  <div class="chart-bar-fill" data-width="68"></div>
+                <div class="chart-row">
+                  <div class="chart-row-label">
+                    <span>European Industrial Manufacturers</span>
+                    <span>24%</span>
+                  </div>
+                  <div class="chart-bar-bg">
+                    <div class="chart-bar-fill" data-width="24"></div>
+                  </div>
                 </div>
               </div>
-              <div class="chart-row">
-                <div class="chart-row-label">
-                  <span>European Industrial Manufacturers</span>
-                  <span>24%</span>
-                </div>
-                <div class="chart-bar-bg">
-                  <div class="chart-bar-fill" data-width="24"></div>
-                </div>
-              </div>
-              <div class="chart-row">
-                <div class="chart-row-label">
-                  <span>Middle East Logistics Transit</span>
-                  <span>8%</span>
-                </div>
-                <div class="chart-bar-bg">
-                  <div class="chart-bar-fill" data-width="8"></div>
-                </div>
+              <div class="sourcing-chips" style="margin-top: 20px;">
+                <span class="brand-chip">HITACHI</span>
+                <span class="brand-chip">SANY</span>
+                <span class="brand-chip">EPIROC</span>
+                <span class="brand-chip">LINGONG</span>
               </div>
             </div>
-
-            <h4 class="chart-card-title" style="margin-top: 32px;" data-i18n="businesses.sourcingNetworkTitle">Global
-              Sourcing Network</h4>
-            <div class="sourcing-chips">
-              <span class="brand-chip">HITACHI</span>
-              <span class="brand-chip">SANY</span>
-              <span class="brand-chip">EPIROC</span>
-              <span class="brand-chip">LINGONG</span>
-              <span class="brand-chip">THRIVENI</span>
+            <div class="zigzag-media">
+              <div class="zigzag-img-frame">
+                <img src="assets/images/industrial_warehouse_machinery.png" alt="Industrial Assembly & Warehouse Depot">
+                <span class="zigzag-badge">FACTORY WAREHOUSE</span>
+              </div>
             </div>
-            <p class="disclaimer-text" data-i18n="businesses.sourcingNote">
-              Note: Trade data indicates sourcing relationships. Official distributor status subject to verification by
-              company.
-            </p>
           </div>
         </div>
       </div>
 
       <!-- Tab 2: Export -->
       <div id="tab-export" class="tab-content-panel">
-        <div class="pillar-grid">
-          <div class="pillar-details">
-            <div style="margin-bottom: 20px; overflow: hidden; border: 1px solid var(--border-green); height: 180px;">
-              <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80"
-                alt="Ethiopian Agricultural Commodity Export" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="zigzag-container">
+          <!-- Row 1: Photo Left, Content Right -->
+          <div class="zigzag-row">
+            <div class="zigzag-media">
+              <div class="zigzag-img-frame">
+                <img src="assets/images/agricultural_pulses_seeds.png"
+                  alt="Ethiopian Agricultural Commodities Sesame & Pulses">
+                <span class="zigzag-badge">HS 1207 EXPORT</span>
+              </div>
             </div>
-            <h3>Ethiopian Agricultural Commodities for Global Markets</h3>
-            <p style="color: var(--stone-mid); margin-bottom: 24px;">
-              Exporters of specification-grade Ethiopian oilseeds, pulses, and speciality Arabica coffee supplying
-              international buyers in Europe, the Middle East, and Asia.
-            </p>
-            <div class="product-list-box">
-              <div class="product-item">
-                <span class="product-name">Ethiopian Whitish Sesame Seeds (Humera/Wollega)</span>
-                <span class="hs-code">HS 12074090</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">Ethiopian Arabica Coffee (Guji Grade 2)</span>
-                <span class="hs-code">HS 09011100</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">Green Mung Beans (Hand Picked Selected)</span>
-                <span class="hs-code">HS 07133300</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">Rapeseed, Canola & Natural Oilseeds</span>
-                <span class="hs-code">HS 12079990</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">Dry Peas & White Kidney Beans</span>
-                <span class="hs-code">HS 07132020</span>
+            <div class="zigzag-info">
+              <span class="mono-tag">AGRICULTURAL EXPORT DIVISION</span>
+              <h3 class="zigzag-title">Specification-Grade Ethiopian Commodities</h3>
+              <p class="zigzag-desc">
+                Exporters of specification-grade Ethiopian oilseeds, pulses, and speciality Arabica coffee supplying
+                international buyers in Europe, the Middle East, and Asia.
+              </p>
+              <div class="product-list-box">
+                <div class="product-item">
+                  <span class="product-name">Ethiopian Whitish Sesame Seeds (Humera/Wollega)</span>
+                  <span class="hs-code">HS 12074090</span>
+                </div>
+                <div class="product-item">
+                  <span class="product-name">Ethiopian Arabica Coffee (Guji Grade 2)</span>
+                  <span class="hs-code">HS 09011100</span>
+                </div>
+                <div class="product-item">
+                  <span class="product-name">Green Mung Beans (Hand Picked Selected)</span>
+                  <span class="hs-code">HS 07133300</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="chart-card">
-            <h4 class="chart-card-title" data-i18n="businesses.buyersTitle">Verified Buyer Destinations</h4>
-            <div class="bar-chart">
-              <div class="chart-row">
-                <div class="chart-row-label">
-                  <span>United Arab Emirates (Dubai Trading)</span>
-                  <span>38%</span>
+          <!-- Row 2: Content Left, Photo Right (Reverse) -->
+          <div class="zigzag-row reverse">
+            <div class="zigzag-info">
+              <span class="mono-tag">INTERNATIONAL BUYERS</span>
+              <h3 class="zigzag-title">Verified Export Destinations &amp; Corridors</h3>
+              <div class="bar-chart">
+                <div class="chart-row">
+                  <div class="chart-row-label">
+                    <span>United Arab Emirates (Dubai Hub)</span>
+                    <span>38%</span>
+                  </div>
+                  <div class="chart-bar-bg">
+                    <div class="chart-bar-fill export-green" data-width="38"></div>
+                  </div>
                 </div>
-                <div class="chart-bar-bg">
-                  <div class="chart-bar-fill export-green" data-width="38"></div>
-                </div>
-              </div>
-              <div class="chart-row">
-                <div class="chart-row-label">
-                  <span>Vietnam & East Asian Processing</span>
-                  <span>26%</span>
-                </div>
-                <div class="chart-bar-bg">
-                  <div class="chart-bar-fill export-green" data-width="26"></div>
-                </div>
-              </div>
-              <div class="chart-row">
-                <div class="chart-row-label">
-                  <span>Singapore & Regional Trading Hubs</span>
-                  <span>20%</span>
-                </div>
-                <div class="chart-bar-bg">
-                  <div class="chart-bar-fill export-green" data-width="20"></div>
+                <div class="chart-row">
+                  <div class="chart-row-label">
+                    <span>Vietnam &amp; East Asian Processing</span>
+                    <span>26%</span>
+                  </div>
+                  <div class="chart-bar-bg">
+                    <div class="chart-bar-fill export-green" data-width="26"></div>
+                  </div>
                 </div>
               </div>
-              <div class="chart-row">
-                <div class="chart-row-label">
-                  <span>United Kingdom & EU Importers</span>
-                  <span>16%</span>
-                </div>
-                <div class="chart-bar-bg">
-                  <div class="chart-bar-fill export-green" data-width="16"></div>
-                </div>
+              <div class="sourcing-chips" style="margin-top: 20px;">
+                <span class="brand-chip" style="border-color: var(--border-green);">CMC TRADING</span>
+                <span class="brand-chip" style="border-color: var(--border-green);">THIEN THANH I/E</span>
+                <span class="brand-chip" style="border-color: var(--border-green);">N.A. SESAME</span>
               </div>
             </div>
-
-            <h4 class="chart-card-title" style="margin-top: 32px;">Documented International Buyers</h4>
-            <div class="sourcing-chips">
-              <span class="brand-chip" style="border-color: var(--border-green);">CMC TRADING</span>
-              <span class="brand-chip" style="border-color: var(--border-green);">THIEN THANH I/E</span>
-              <span class="brand-chip" style="border-color: var(--border-green);">N.A. SESAME WORKS</span>
+            <div class="zigzag-media">
+              <div class="zigzag-img-frame">
+                <img src="assets/images/green_freight_fleet.png" alt="Cross-Border Freight Transport Fleet">
+                <span class="zigzag-badge">LOGISTICS FLEET</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Tab 3: Procurement -->
-
       <div id="tab-procurement" class="tab-content-panel">
-        <div class="pillar-grid">
-          <div class="pillar-details">
-            <div style="margin-bottom: 20px; overflow: hidden; border: 1px solid var(--border-blue); height: 180px;">
-              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80"
-                alt="Institutional Construction & Procurement Supply"
-                style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="zigzag-container">
+          <!-- Row 1: Photo Left, Content Right -->
+          <div class="zigzag-row">
+            <div class="zigzag-media">
+              <div class="zigzag-img-frame">
+                <img src="assets/images/kishin_spice_procurement.png"
+                  alt="Kishin Mekelesha Packaged Goods & Commercial Procurement">
+                <span class="zigzag-badge">COMMERCIAL SUPPLY</span>
+              </div>
             </div>
-            <h3>Institutional Procurement & Government Supply</h3>
-            <p style="color: var(--stone-mid); margin-bottom: 24px;">
-              Executing multi-item procurement contracts for federal and regional Ethiopian government authorities,
-              supplying specialized building materials and power systems.
-            </p>
-            <div class="product-list-box">
-              <div class="product-item">
-                <span class="product-name">Granite Tiles & Hardwood Door Packages</span>
-                <span class="hs-code">BUILDING</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">30KVA Industrial Silent Diesel Generators</span>
-                <span class="hs-code">POWER</span>
-              </div>
-              <div class="product-item">
-                <span class="product-name">Indoor Audio-Visual Display & Conference Systems</span>
-                <span class="hs-code">EQUIPMENT</span>
+            <div class="zigzag-info">
+              <span class="mono-tag">COMMERCIAL CONSUMER &amp; PACKAGED GOODS</span>
+              <h3 class="zigzag-title">Consumer FMCG &amp; Commercial Supply</h3>
+              <p class="zigzag-desc">
+                Distributor and procurement manager of commercial packaged goods including Kishin Mekelesha spice mixes,
+                consumer food lines, and regional trade commodities.
+              </p>
+              <div class="product-list-box">
+                <div class="product-item">
+                  <span class="product-name">Kishin Mekelesha Spice Mix Packaged Goods</span>
+                  <span class="hs-code">FMCG</span>
+                </div>
+                <div class="product-item">
+                  <span class="product-name">Granite Tiles &amp; Hardwood Finishing Packages</span>
+                  <span class="hs-code">BUILDING</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="chart-card">
-            <h4 class="chart-card-title">Institutional Supply References</h4>
-            <ul style="color: var(--stone-mid); line-height: 2;">
-              <li>âœ” <strong>Defense Construction Enterprise:</strong> Commercial finishings for 10-story complex.</li>
-              <li>âœ” <strong>Hawassa City Administration:</strong> Municipal procurement supply contracts.</li>
-              <li>âœ” <strong>Federal Agencies:</strong> Competitive tender execution.</li>
-            </ul>
+
+          <!-- Row 2: Content Left, Photo Right (Reverse) -->
+          <div class="zigzag-row reverse">
+            <div class="zigzag-info">
+              <span class="mono-tag">INSTITUTIONAL TENDERS</span>
+              <h3 class="zigzag-title">Government &amp; Public Sector Procurement</h3>
+              <p class="zigzag-desc">
+                Executing multi-item procurement contracts for federal and regional Ethiopian government authorities,
+                supplying specialized building materials and heavy power systems.
+              </p>
+              <ul style="color: var(--stone-mid); line-height: 2; margin-top: 12px; padding-left: 18px;">
+                <li>✓ <strong>Defense Construction Enterprise:</strong> Commercial finishings complex.</li>
+                <li>✓ <strong>Hawassa City Administration:</strong> Municipal procurement contracts.</li>
+                <li>✓ <strong>Federal Agencies:</strong> Competitive tender execution.</li>
+              </ul>
+            </div>
+            <div class="zigzag-media">
+              <div class="zigzag-img-frame">
+                <img src="assets/images/industrial_warehouse_machinery.png"
+                  alt="Procurement Supply & Warehouse Facility">
+                <span class="zigzag-badge">WAREHOUSE FACILITY</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Tab 4: Investment -->
       <div id="tab-investment" class="tab-content-panel">
-        <div class="pillar-grid">
-          <div class="pillar-details">
-            <div style="margin-bottom: 20px; overflow: hidden; border: 1px solid var(--border-amber); height: 180px;">
-              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
-                alt="Hospitality & Commercial Investment" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <h3>Hospitality & Commercial Investment</h3>
-            <p style="color: var(--stone-mid); margin-bottom: 24px;">
-              Developing domestic service infrastructure and hospitality assets in regional commercial centers across
-              Amhara Region and Addis Ababa.
-            </p>
-            <div class="product-list-box">
-              <div class="product-item">
-                <span class="product-name">3-Star Hotel Venture (Debre Markos, Amhara Region)</span>
-                <span class="hs-code">HOSPITALITY</span>
+        <div class="zigzag-container">
+          <!-- Row 1: Photo Left, Content Right -->
+          <div class="zigzag-row">
+            <div class="zigzag-media">
+              <div class="zigzag-img-frame">
+                <img src="assets/images/ceo_edmealem_ejigu.png" alt="Edmealem Ejigu Founder Corporate Headquarters">
+                <span class="zigzag-badge">HEADQUARTERS</span>
               </div>
-              <div class="product-item">
-                <span class="product-name">Commercial Real Estate Holdings</span>
-                <span class="hs-code">PROPERTY</span>
+            </div>
+            <div class="zigzag-info">
+              <span class="mono-tag">COMMERCIAL INVESTMENT DIVISION</span>
+              <h3 class="zigzag-title">Hospitality &amp; Commercial Real Estate</h3>
+              <p class="zigzag-desc">
+                Developing domestic service infrastructure and hospitality assets in regional commercial centers across
+                Amhara Region and Addis Ababa.
+              </p>
+              <div class="product-list-box">
+                <div class="product-item">
+                  <span class="product-name">3-Star Hotel Venture (Debre Markos, Amhara Region)</span>
+                  <span class="hs-code">HOSPITALITY</span>
+                </div>
+                <div class="product-item">
+                  <span class="product-name">Commercial Real Estate Holdings (Birhanena Selam, Addis)</span>
+                  <span class="hs-code">PROPERTY</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="chart-card">
-            <h4 class="chart-card-title">Investment Outlook</h4>
-            <p style="color: var(--stone-mid); line-height: 1.7;">
-              Reinvesting export capital gains into long-term regional hospitality, logistics fleet maintenance depots,
-              and commercial property assets.
-            </p>
+
+          <!-- Row 2: Content Left, Photo Right (Reverse) -->
+          <div class="zigzag-row reverse">
+            <div class="zigzag-info">
+              <span class="mono-tag">REGIONAL OUTLOOK</span>
+              <h3 class="zigzag-title">Asset Growth &amp; Infrastructure Reinvestment</h3>
+              <p class="zigzag-desc">
+                Reinvesting export capital gains into long-term regional hospitality, logistics fleet maintenance
+                depots, and commercial property assets across Ethiopia's growth corridors.
+              </p>
+            </div>
+            <div class="zigzag-media">
+              <div class="zigzag-img-frame">
+                <img src="assets/images/green_freight_fleet.png" alt="Transport Fleet Depot & Commercial Holdings">
+                <span class="zigzag-badge">FLEET ASSETS</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -126,18 +126,40 @@ function initTabbedPillars() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-content-panel');
 
+    function switchTab(targetId) {
+        tabBtns.forEach(b => {
+            if (b.getAttribute('data-tab') === targetId) {
+                b.classList.add('active');
+            } else {
+                b.classList.remove('active');
+            }
+        });
+        tabPanels.forEach(p => p.classList.remove('active'));
+
+        const activePanel = document.getElementById(targetId);
+        if (activePanel) {
+            activePanel.classList.add('active');
+            triggerChartBars(activePanel);
+        }
+    }
+
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const targetId = btn.getAttribute('data-tab');
+            switchTab(targetId);
+        });
+    });
 
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabPanels.forEach(p => p.classList.remove('active'));
-
-            btn.classList.add('active');
-            const activePanel = document.getElementById(targetId);
-            if (activePanel) {
-                activePanel.classList.add('active');
-                triggerChartBars(activePanel);
+    // Handle links with data-tab-target (e.g. from header dropdown menu)
+    document.querySelectorAll('[data-tab-target]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetTab = link.getAttribute('data-tab-target');
+            if (targetTab) {
+                switchTab(targetTab);
+                const businessesSection = document.getElementById('businesses');
+                if (businessesSection) {
+                    businessesSection.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
     });
